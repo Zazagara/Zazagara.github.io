@@ -1,0 +1,253 @@
+:root {
+    --bg-dark: #090a0f;
+    --text-main: #ffffff;
+    --text-muted: #8a8d98;
+    --accent-color: #1ed760; /* Un vert émeraude très graphique */
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-stack);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    padding: 0 8%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* L'effet de halo de couleur en arrière-plan (Style Seán) */
+.glow-bg {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(30, 215, 96, 0.08) 0%, rgba(138, 43, 226, 0.05) 50%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Barre de navigation haut de gamme */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+.nav-brand {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.nav-links span {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-links span:hover {
+    color: var(--text-main);
+}
+
+.active-badge {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.07);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header Typographique Impactant (Style Seán / Maria) */
+.hero {
+    position: relative;
+    padding: 8rem 0 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.5;
+}
+
+.software-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.software-tags span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Éléments de déco (Étoiles) */
+.star-deco {
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+.deco-1 { top: 20%; left: 15%; }
+.deco-2 { top: 40%; right: 12%; }
+
+/* Sections */
+.section {
+    margin-top: 6rem;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Carrousel Shorts Fluide */
+.carousel-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 1rem;
+}
+.carousel-container::-webkit-scrollbar { display: none; }
+
+.carousel {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.short-card {
+    flex: 0 0 240px;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border-radius: 18px; /* Coins très arrondis modernes */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.short-card:hover {
+    transform: scale(1.03);
+}
+
+.short-card iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Grille des Formats Longs (Style Bento Box colorée) */
+.long-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+}
+
+.long-card {
+    border-radius: 24px;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Teintes légères de fond pour casser le noir (comme tes exemples) */
+.card-purple { background: linear-gradient(145deg, #13111c, #0d0c12); }
+.card-mint { background: linear-gradient(145deg, #0d1411, #0a0e0c); }
+
+.long-card:hover {
+    transform: translateY(-4px);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-info {
+    padding-top: 1.2rem;
+}
+
+.card-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.long-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Footer Épuré & Gros bouton Mail */
+footer {
+    margin: 10rem 0 4rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 4rem;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-mail {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    transition: color 0.2s;
+}
+
+.footer-mail:hover {
+    color: var(--accent-color);
+}
